@@ -26,6 +26,6 @@ app.use("/api/users", userRoute);
 app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
-app.listen(8800, ()=>{
+app.listen(8800||"https://netflix-ui-k2u6.onrender.com", ()=>{
     console.log("Backend Server is running");    
 })  
