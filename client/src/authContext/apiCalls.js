@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
-    const res = await axiosInstance.post("/api/auth/login", user);
+    const res = await axiosInstance.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());
