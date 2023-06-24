@@ -29,7 +29,7 @@ export default function Register() {
     setUsername(usernameRef.current.value);
 
     try {
-      await axiosInstance.post("auth/register", { email, username, password });
+      await axiosInstance.post("/api/auth/register", { email, username, password });
       navigate("/login", { replace: true }); 
     } catch (err) {}
   };
