@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 
 export default function Featured({ type,setGenre }) {
   const [movie, setMovie] = useState({});
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API,
+  })
+
 
   useEffect(()=>{
     const getMovie = async () =>{
       try{
-        const res = await axios.get(`/movies/random?type=${type}`,          
+        const res = await axiosInstance.get(`/movies/random?type=${type}`,          
         {
           headers:{
             token:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NzU4NzQ0MywiZXhwIjoxNjg4MDE5NDQzfQ.53hD--zM0-1PsjFNZuy9kE1rCosANak4mvVODqsLx9M"

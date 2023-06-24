@@ -18,13 +18,18 @@ export default function Register() {
     setEmail(emailRef.current.value);
   };
 
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API,
+  })
+
+
   const handleFinish = async (e) => {
     e.preventDefault();
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
 
     try {
-      await axios.post("auth/register", { email, username, password });
+      await axiosInstance.post("auth/register", { email, username, password });
       navigate("/login", { replace: true }); 
     } catch (err) {}
   };
