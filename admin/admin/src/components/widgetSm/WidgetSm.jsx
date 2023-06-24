@@ -3,12 +3,16 @@ import "./widgetSm.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const axiosInstance = axios.create({
+  baseURL: process.env.REACT_APP_API,
+})
+
 export default function WidgetSm(){
   const [newUsers, setNewUsers]=useState([])
   useEffect(()=>{
     const getNewUsers = async ()=>{
       try {
-        const res = await axios.get("http://localhost:8800/api/users?new=true",
+        const res = await axiosInstance.get("/users?new=true",
         {
           headers:{
             token:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NzU4NzQ0MywiZXhwIjoxNjg4MDE5NDQzfQ.53hD--zM0-1PsjFNZuy9kE1rCosANak4mvVODqsLx9M"

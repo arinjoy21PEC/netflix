@@ -26,10 +26,14 @@ export default function Home() {
   []
   );
   const [userStats, setUserStats]=useState([]);
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API,
+  })
+  
   useEffect(()=>{
     const getStats = async ()=>{
       try{
-        const res = await axios.get("http://localhost:8800/api/users/stats", 
+        const res = await axiosInstance.get("/users/stats", 
         {
           headers:{
             token:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NzU4NzQ0MywiZXhwIjoxNjg4MDE5NDQzfQ.53hD--zM0-1PsjFNZuy9kE1rCosANak4mvVODqsLx9M"
