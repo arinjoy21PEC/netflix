@@ -18,7 +18,7 @@ async function main(){
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-app.use(cors({ origin: "http://localhost:4000", credentials: true}))
+app.use(cors())
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth",authRoute);
