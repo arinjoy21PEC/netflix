@@ -14,6 +14,7 @@ export default function WidgetSm(){
       try {
         const res = await axiosInstance.get("/users?new=true",
         {
+          console.log(localStorage.getItem("user"))
           headers:"Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         });
         setNewUsers(res.data);
