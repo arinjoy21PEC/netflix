@@ -19,7 +19,7 @@ const Home = ({type}) => {
           `lists${type ? "?type=" + type:"" }${genre ? "&genre=" + genre:"" }`,
           {
             headers:{
-              token:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NzU4NzQ0MywiZXhwIjoxNjg4MDE5NDQzfQ.53hD--zM0-1PsjFNZuy9kE1rCosANak4mvVODqsLx9M"
+              token:"Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
             }
           }
         );
