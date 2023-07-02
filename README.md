@@ -1,5 +1,5 @@
 # netflix
 
-client site link : https://cozy-pixie-8729b8.netlify.app/
+client site link : https://netflix-agwy.onrender.com/
 #
-admin pannel link: https://harmonious-banoffee-f0b62e.netlify.app/
+admin pannel link: https://admin-pannel-0g7f.onrender.com/
