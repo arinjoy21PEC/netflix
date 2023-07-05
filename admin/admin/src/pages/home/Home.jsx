@@ -38,11 +38,17 @@ export default function Home() {
   useEffect(() => {
     const getStats = async () => {
       try {
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (!user || !user.accessToken) {
+          // Handle missing or expired token, redirect to login page
+          navigate("/login");
+          return;
+        }
+
         const res = await axiosInstance.get("/users/stats", {
           headers: {
-            token:
-              "Bearer " +
-              JSON.parse(localStorage.getItem("user")).accessToken,
+            token: "Bearer " + user.accessToken,
           },
         });
 
