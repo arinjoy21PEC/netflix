@@ -24,9 +24,9 @@ function App() {
   return (
     <Router>
       {user ? (
-        <AuthenticatedRoutes />
-      ) : (
         <UnauthenticatedRoutes />
+      ) : (
+        <AuthenticatedRoutes />
       )}
     </Router>
   );
