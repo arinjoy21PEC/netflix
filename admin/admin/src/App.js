@@ -23,13 +23,11 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        {user ? (
-          <AuthenticatedRoutes />
-        ) : (
-          <UnauthenticatedRoutes />
-        )}
-      </Routes>
+      {user ? (
+        <AuthenticatedRoutes />
+      ) : (
+        <AuthenticatedRoutes />
+      )}
     </Router>
   );
 }
