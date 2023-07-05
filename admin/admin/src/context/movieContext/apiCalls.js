@@ -20,7 +20,7 @@ export const getMovies = async (dispatch) => {
   try {
     const res = await axiosInstance.get("/movies", {
       headers: {
-        token: "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken
+        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODU3NTY5MCwiZXhwIjoxNjg5MDA3NjkwfQ.VFRANBFh3D9oZhwOkbb3ZsUDMckmuPvwu317cSSfyns"
       },
     });
     dispatch(getMoviesSuccess(res.data));
@@ -35,7 +35,7 @@ export const createMovie = async (movie, dispatch) => {
   try {
     const res = await axiosInstance.post("/movies", movie, {
       headers: {
-        token: "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken
+        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODU3NTY5MCwiZXhwIjoxNjg5MDA3NjkwfQ.VFRANBFh3D9oZhwOkbb3ZsUDMckmuPvwu317cSSfyns"
       },
     });
     dispatch(createMovieSuccess(res.data));
@@ -50,7 +50,7 @@ export const deleteMovie = async (id, dispatch) => {
   try {
     await axiosInstance.delete("/movies/" + id, {
       headers: {
-        token: "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken
+        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2VlYTg5ZjFiMTgwMGM0ZjkwNWZhNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODU3NTY5MCwiZXhwIjoxNjg5MDA3NjkwfQ.VFRANBFh3D9oZhwOkbb3ZsUDMckmuPvwu317cSSfyns"
       },
     });
     dispatch(deleteMovieSuccess(id));
