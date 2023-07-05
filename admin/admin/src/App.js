@@ -17,22 +17,29 @@ import Login from "./pages/Login/Login";
 import ListList from "./pages/listList/ListList";
 import List from "./pages/list/List";
 import NewList from "./pages/newList/NewList";
-const App = () => {
+
+function App() {
   const { user } = useContext(AuthContext);
 
   return (
     <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={user ? <Home /> : <Navigate to="/login" replace />}
-        />
-        <Route
-          path="/login"
-          element={!user ? <Login /> : <Navigate to="/" replace />}
-        />
-        {user && (
-          <>
+      {user ? (
+        <AuthenticatedRoutes />
+      ) : (
+        <AuthenticatedRoutes />
+      )}
+    </Router>
+  );
+}
+
+function AuthenticatedRoutes() {
+  return (
+    <>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/user/:userId" element={<User />} />
           <Route path="/newUser" element={<NewUser />} />
@@ -42,12 +49,20 @@ const App = () => {
           <Route path="/lists" element={<ListList />} />
           <Route path="/list/:listId" element={<List />} />
           <Route path="/newlist" element={<NewList />} />
-          </>
-        )}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </>
   );
-};
+}
+
+function UnauthenticatedRoutes() {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
+  );
+}
 
 export default App;
