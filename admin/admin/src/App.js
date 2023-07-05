@@ -23,11 +23,14 @@ function App() {
 
   return (
     <Router>
-      {user ? (
-        <AuthenticatedRoutes />
-      ) : (
-        <AuthenticatedRoutes />
-      )}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        {user ? (
+          <AuthenticatedRoutes />
+        ) : (
+          <Navigate to="/login" replace />
+        )}
+      </Routes>
     </Router>
   );
 }
@@ -53,15 +56,6 @@ function AuthenticatedRoutes() {
         </Routes>
       </div>
     </>
-  );
-}
-
-function UnauthenticatedRoutes() {
-  return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="*" element={<Navigate to="/login" replace />} />
-    </Routes>
   );
 }
 
