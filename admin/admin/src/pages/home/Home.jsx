@@ -6,7 +6,7 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -33,7 +33,7 @@ export default function Home() {
   const axiosInstance = axios.create({
     baseURL: process.env.REACT_APP_API,
   });
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getStats = async () => {
@@ -49,7 +49,7 @@ export default function Home() {
         if (res.data.error === "Token expired") {
           // Handle token expiration, redirect to login page
           localStorage.removeItem("user");
-          history.push("/login");
+          navigate("/login");
           return;
         }
 
@@ -69,7 +69,7 @@ export default function Home() {
     };
 
     getStats();
-  }, [MONTHS, axiosInstance, history]);
+  }, [MONTHS, axiosInstance, navigate]);
 
   return (
     <div className="home">
