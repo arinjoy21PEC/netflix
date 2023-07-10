@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./Login.scss";
 import { AuthContext } from "../../authContext/AuthContext"
 import { login } from "../../authContext/apiCalls"
+import antflixLogo from "./antflix.png";
 
 export default function Login() {
   const [email, setEmail]=useState(" ")
@@ -19,7 +20,7 @@ export default function Login() {
         <div className="wrapper">
           <img
             className="logo"
-            src="/antflix.png"
+            src={antflixLogo}
             alt=""
           />
         </div>
