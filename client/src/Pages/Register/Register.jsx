@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./Register.scss";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import antflixLogo from "./antflix.png"
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -40,7 +41,7 @@ export default function Register() {
         <div className="wrapper">
           <img
             className="logo"
-            src="/antflix.png"
+            src={antflixLogo}
             alt=""
           />
             {/* <button  className="loginButton" 
