@@ -40,7 +40,7 @@ export default function Register() {
         <div className="wrapper">
           <img
             className="logo"
-            src="./antflix.png"
+            src="/antflix.png"
             alt=""
           />
             {/* <button  className="loginButton" 
