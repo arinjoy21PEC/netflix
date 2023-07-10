@@ -19,7 +19,7 @@ export default function Login() {
         <div className="wrapper">
           <img
             className="logo"
-            src="./antflix.png"
+            src="/antflix.png"
             alt=""
           />
         </div>
