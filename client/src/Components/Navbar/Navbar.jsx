@@ -5,6 +5,7 @@ import "./Navbar.scss";
 import {Link} from "react-router-dom";
 import {AuthContext} from "../../authContext/AuthContext";
 import {logout} from "../../authContext/AuthActions";
+import antflixLogo from "./antflix.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img
-            src="/antflix.png"
+            src={antflixLogo}
             alt=""
           />
           <Link to="/" className="link">
