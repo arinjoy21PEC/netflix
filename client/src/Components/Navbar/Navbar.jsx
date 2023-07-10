@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img
-            src="./antflix.png"
+            src="/antflix.png"
             alt=""
           />
           <Link to="/" className="link">
