@@ -13,9 +13,9 @@ import { useContext } from "react";
 import ListList from "./pages/listList/ListList";
 import List from "./pages/list/List";
 import NewList from "./pages/newList/NewList";
-import MovieList from "./pages/movieList/MovieList";
-import Movie from "./pages/movie/Movie";
-import NewMovie from "./pages/newMovie/NewMovie";
+import ProductList from "./pages/productList/ProductList";
+import Product from "./pages/product/Product";
+import NewProduct from "./pages/newProduct/NewProduct";
 
 const Layout = () => {
   const { user } = useContext(AuthContext);
@@ -62,15 +62,15 @@ const routes: RouteObject[] = [
       },
       {
         path: "/movies",
-        element: <MovieList />,
+        element: <ProductList />
       },
       {
-        path: "/movie/:movieId",
-        element: <Movie />,
+        path: "/movies/find/:productId",
+        element: <Product />
       },
       {
-        path: "/newMovie",
-        element: <NewMovie />,
+        path: "/newProduct",
+        element: <NewProduct />
       },
       {
         path: "/lists",
