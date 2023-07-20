@@ -7,7 +7,7 @@ import Home from "./pages/home/Home";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
-import Login from "./pages/login/Login";
+import Login from "./pages/Login/Login";
 import { AuthContext } from "./context/authContext/AuthContext";
 import { useContext } from "react";
 import ListList from "./pages/listList/ListList";
