@@ -19,7 +19,7 @@ import NewProduct from "./pages/newProduct/NewProduct";
 
 const Layout = () => {
   const { user } = useContext(AuthContext);
-  const token = JSON.parse(localStorage.getItem("user")).accessToken;
+  const token = JSON.parse(localStorage.getItem("user"))?.accessToken;
   if (!token) {
     return <Login />;
   }
