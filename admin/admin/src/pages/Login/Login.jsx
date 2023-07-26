@@ -15,7 +15,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await login({ email, password }, dispatch);
-      if (response.success) {
+      console.log(response); // Log the response to see its content
+      if (response && response.success){
         navigate('/');
       }
     } catch (error) {
