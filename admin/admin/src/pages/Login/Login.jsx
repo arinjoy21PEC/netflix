@@ -13,7 +13,16 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login({ email, password }, dispatch);
+    try {
+      const res = await newRequest.post("/api/auth/login", { username, password });
+      navigate("/")
+    } catch (err) {
+      if (err.response && err.response.data) {
+        setError(err.response.data);
+      } else {
+        setError("Something went wrong!");
+      }
+    }
   };
 
   return (
