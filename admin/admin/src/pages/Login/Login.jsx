@@ -14,7 +14,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     try {
-      const res = await newRequest.post("/api/auth/login", { username, password });
+      const res = await newRequest.post("/auth/login", { email, password });
       navigate("/")
     } catch (err) {
       if (err.response && err.response.data) {
