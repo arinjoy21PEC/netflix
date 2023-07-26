@@ -4,6 +4,7 @@ import { login } from "../../context/authContext/apiCalls";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./login.css"
 
 const Login = () => {
   const [email, setEmail] = useState("");
