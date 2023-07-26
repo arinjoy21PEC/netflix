@@ -12,10 +12,14 @@ const Login = () => {
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API,
+  })
+  
   const handleLogin = (e) => {
     e.preventDefault();
     try {
-      const res = await newRequest.post("/auth/login", { email, password });
+      const res = await axiosInstance.post("/auth/login", { email, password });
       navigate("/")
     } catch (err) {
       if (err.response && err.response.data) {
