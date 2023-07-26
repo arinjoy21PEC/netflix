@@ -6,8 +6,15 @@ export default function Topbar() {
   return (
     <div className="topbar">
       <div className="topbarWrapper">
-        <div className="topLeft">
+        <div className="topLeft"> 
           <span className="logo">AdminPannel</span>
+          <Link to='/login'>
+            <button>
+              <span>
+                LogOut
+              </span>
+            </button>
+          </Link>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
