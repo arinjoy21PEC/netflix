@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { login } from "../../context/authContext/apiCalls";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory hook
+import { useHistory } from 'react-router'; // Import useHistory hook
 
 const Login = () => {
   const [email, setEmail] = useState("");
