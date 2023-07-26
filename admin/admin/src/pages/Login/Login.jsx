@@ -3,21 +3,20 @@ import { useState } from 'react';
 import { login } from "../../context/authContext/apiCalls";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { useContext } from 'react';
-import { useHistory } from 'react-router'; // Import useHistory hook
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { dispatch } = useContext(AuthContext);
-  const history = useHistory(); // Get the history object from useHistory
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await login({ email, password }, dispatch);
       if (response.success) {
-        // If login is successful, navigate to a different page
-        history.push('/'); // Replace 'dashboard' with the desired page URL
+        navigate('/');
       }
     } catch (error) {
       // Handle login error if needed
