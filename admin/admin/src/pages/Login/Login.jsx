@@ -5,10 +5,12 @@ import { login } from "../../context/authContext/apiCalls";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null)
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
