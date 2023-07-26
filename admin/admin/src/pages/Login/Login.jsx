@@ -16,7 +16,7 @@ const Login = () => {
     baseURL: process.env.REACT_APP_API,
   })
   
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
     try {
       const res = await axiosInstance.post("/auth/login", { email, password });
