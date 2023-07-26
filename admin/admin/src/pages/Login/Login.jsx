@@ -4,32 +4,16 @@ import { useState } from 'react';
 import { login } from "../../context/authContext/apiCalls";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null)
   const { dispatch } = useContext(AuthContext);
-  const navigate = useNavigate();
 
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API,
-  })
-  
-  const handleLogin = async(e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const res = await axiosInstance.post("/auth/login", { email, password });
-      navigate("/")
-    } catch (err) {
-      if (err.response && err.response.data) {
-        setError(err.response.data);
-      } else {
-        setError("Something went wrong!");
-      }
-    }
+    login({ email, password }, dispatch);
   };
 
   return (
