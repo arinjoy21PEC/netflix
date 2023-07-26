@@ -19,8 +19,8 @@ import NewProduct from "./pages/newProduct/NewProduct";
 
 const Layout = () => {
   const { user } = useContext(AuthContext);
-
-  if (!user) {
+  token: "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+  if (!token) {
     return <Login />;
   }
 
