@@ -4,6 +4,7 @@ import { LanguageOutlined, NotificationsNoneOutlined, SettingsOutlined } from "@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import {logout} from "../../context/authContext/AuthActions";
+import { useContext } from "react";
 
 export default function Topbar() {
   const {dispatch} = useContext(AuthContext)
