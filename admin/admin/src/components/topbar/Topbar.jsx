@@ -2,20 +2,21 @@ import React from "react";
 import "./topbar.css";
 import { LanguageOutlined, NotificationsNoneOutlined, SettingsOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import {AuthContext} from "../../authContext/AuthContext";
+import {logout} from "../../authContext/AuthActions";
 
 export default function Topbar() {
+  const {dispatch} = useContext(AuthContext)
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft"> 
           <span className="logo">AdminPannel</span>
-          <Link to='/login'>
-            <button>
+            <button onClick={() => dispatch(logout())}>
               <span>
                 LogOut
               </span>
             </button>
-          </Link>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
