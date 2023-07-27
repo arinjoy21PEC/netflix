@@ -2,8 +2,8 @@ import React from "react";
 import "./topbar.css";
 import { LanguageOutlined, NotificationsNoneOutlined, SettingsOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import {AuthContext} from "../../authContext/AuthContext";
-import {logout} from "../../authContext/AuthActions";
+import { AuthContext } from "../../context/authContext/AuthContext";
+import {logout} from "../../context/authContext/AuthActions";
 
 export default function Topbar() {
   const {dispatch} = useContext(AuthContext)
